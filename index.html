@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Link from error summary</title>
+  <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <style>
+    body {
+      max-width: 960px;
+      margin: auto;
+      margin-bottom: 100vh;
+    }
+    .nav ul {
+      margin-bottom: 1em;
+    }
+
+    label, .error {
+      display: block;
+      margin-bottom: 0.5em;
+    }
+
+    [type="radio"] + label,
+    [type="checkbox"] + label {
+      display: inline;
+    }
+    
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <ul class="nav">
+    <li>
+      Text input
+      <ul>
+        <li><a href="#textinput">Link to input</a></li>
+        <li><a href="#textinput-label">Link to label</a></li>
+      </ul>
+    </li>
+
+    <li>
+      Textarea
+      <ul>
+        <li><a href="#textarea">Link to textarea</a></li>
+        <li><a href="#textarea-label">Link to label</a></li>
+      </ul>
+    </li>
+
+    <li>
+      Select
+      <ul>
+        <li><a href="#select">Link to select</a></li>
+        <li><a href="#select-label">Link to label</a></li>
+      </ul>
+    </li>
+
+    <li>
+      Multiple inputs (fieldset)
+      <ul>
+        <li><a href="#fieldset">Link to fieldset</a></li>
+        <li><a href="#fieldset-legend">Link to legend</a></li>
+        <li><a href="#fieldset-one">Link to first input</a></li>
+        <li><a href="#fieldset-three">Link to third input</a></li>
+      </ul>
+    </li>
+
+    <li>
+      File input
+      <ul>
+        <li><a href="#file">Link to file input</a></li>
+        <li><a href="#file-label">Link to label</a></li>
+      </ul>
+    </li>
+
+    <li>
+      Radios
+      <ul>
+        <li><a href="#radios-fieldset">Link to fieldset</a></li>
+        <li><a href="#radios-legend">Link to legend</a></li>
+        <li><a href="#radios-1">Link to first radio</a></li>
+      </ul>
+    </li>
+
+    <li>
+      Checkboxes
+      <ul>
+        <li><a href="#checkboxes-fieldset">Link to fieldset</a></li>
+        <li><a href="#checkboxes-legend">Link to legend</a></li>
+        <li><a href="#checkboxes-1">Link to first checkbox</a></li>
+      </ul>
+    </li>
+
+    <li>
+      Checkboxes
+      <ul>
+        <li><a href="#checkbox">Link to checkbox</a></li>
+        <li><a href="#checkbox-label">Link to label</a></li>
+      </ul>
+    </li>
+
+  </ul>
+
+  <h1>Form</h1>
+
+  <h2>Text input</h2>
+
+  <label id="textinput-label" for="textinput">Label for text input</label>
+  <span class="error" id="textinput-error">Error for text input</span>
+  <input id="textinput" type="text" aria-describedby="textinput-error" value="Current value">
+
+  <h2>Textarea</h2>
+
+  <label id="textarea-label" for="textarea">Label for textarea</label>
+  <span class="error" id="textarea-error">Error for textarea</span>
+  <textarea id="textarea" name="textarea" rows="10" cols="50" aria-describedby="textarea-error">Current value</textarea>
+
+  <h2>Select</h2>
+
+  <label id="select-label" for="select">
+    Label for select
+  </label>
+  <span class="error" id="select-error">
+    Error for select
+  </span>
+  <select id="select" name="select" aria-describedby="select-error">
+    <option value="one">One</option>
+    <option value="two" selected>Two</option>
+    <option value="two">Three</option>
+  </select>
+
+  <h2>Multiple inputs</h2>
+
+  <fieldset id="fieldset" aria-describedby="fieldset-error" role="group">
+    <legend id="fieldset-legend">Legend for multiple inputs</legend>
+    <span id="fieldset-error" class="error">
+      Error for multiple inputs
+    </span>
+
+    <label for="fieldset-one">
+      One
+    </label>
+    <input id="fieldset-one" name="one">
+
+    <label for="fieldset-two">
+      Two
+    </label>
+    <input id="fieldset-two" name="two">
+
+    <label for="fieldset-three">
+      Three
+    </label>
+    <input id="fieldset-three" name="three">
+  </fieldset>
+
+  <h2>File</h2>
+
+  <label id="file-label" for="file">
+    Label for file
+  </label>
+  <span id="file-error" class="error">
+    Error for file
+  </span>
+  <input id="file" name="file" type="file" aria-describedby="file-error">
+
+  <h2>Radios</h2>
+
+  <fieldset id="radios-fieldset" aria-describedby="radios-error">
+    <legend id="radios-legend">Legend for radios</legend>
+    <span id="radios-error" class="error">
+      Error for radios
+    </span>
+
+    <input id="radios-1" name="radios" type="radio" value="one">
+    <label for="radios-1">
+      One
+    </label>
+      
+    <input id="radios-2" name="radios" type="radio" value="two">
+    <label for="radios-2">
+      Two
+    </label>
+  </fieldset>
+
+  <h2>Checkboxes</h2>
+
+  <fieldset id="checkboxes-fieldset" aria-describedby="checkboxes-error">
+    <legend id="checkboxes-legend">Legend for checkboxes</legend>
+    <span id="checkboxes-error" class="error">
+      Error for checkboxes
+    </span>
+
+    <input id="checkboxes-1" name="checkboxes" type="checkbox" value="one">
+    <label for="checkboxes-1">
+      One
+    </label>
+
+    <input id="checkboxes-2" name="checkboxes" type="checkbox" value="two">
+    <label for="checkboxes-2">
+      Two
+    </label>
+  </fieldset>
+
+  <h2>Single checkbox</h2>
+
+  <span id="checkbox-error" class="error">
+    Error for single checkbox
+  </span>
+
+  <input id="checkbox" name="agree" type="checkbox" value="yes" aria-describedby="checkbox-error">
+  <label id="checkbox-label" for="checkbox">
+    Label for single checkbox
+  </label>
+</div>
+
+</body>
+</html>
