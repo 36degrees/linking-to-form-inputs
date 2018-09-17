@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Link from error summary</title>
+  <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+  <ul>
+    <li><a href="#fieldset">Link to fieldset</a></li>
+    <li><a href="#fieldset-with-aria-describedby">Link to fieldset with aria-describedby</a></li>
+    <li><a href="#fieldset-tabindex">Link to fieldset with tabindex=-1</a></li>
+  </ul>
+
+  <fieldset id="fieldset">
+    <legend>Legend for checkboxes</legend>
+
+    <input id="checkboxes-1" name="checkboxes" type="checkbox" value="one">
+    <label for="checkboxes-1">
+      One
+    </label>
+      
+    <input id="checkboxes-2" name="checkboxes" type="checkbox" value="two">
+    <label for="checkboxes-2">
+      Two
+    </label>
+  </fieldset>
+
+  <fieldset id="fieldset-with-aria-describedby" aria-describedby="checkboxes-error">
+    <legend>Legend for checkboxes</legend>
+    <span id="checkboxes-error" class="error">
+      Error for checkboxes
+    </span>
+
+    <input id="checkboxes-3" name="checkboxes" type="checkbox" value="three">
+    <label for="checkboxes-3">
+      Three
+    </label>
+      
+    <input id="checkboxes-4" name="checkboxes" type="checkbox" value="four">
+    <label for="checkboxes-4">
+      Four
+    </label>
+  </fieldset>
+
+  <fieldset id="fieldset-tabindex" aria-describedby="checkboxes-error-2" tabindex="-1">
+    <legend>Legend for checkboxes</legend>
+    <span id="checkboxes-error-2" class="error">
+      Error for checkboxes
+    </span>
+
+    <input id="checkboxes-5" name="checkboxes" type="checkbox" value="five">
+    <label for="checkboxes-5">
+      Three
+    </label>
+      
+    <input id="checkboxes-6" name="checkboxes" type="checkbox" value="six">
+    <label for="checkboxes-6">
+      Four
+    </label>
+  </fieldset>
